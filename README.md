@@ -18,25 +18,39 @@
 
 这个主程序用户每次只能输入一段字符串，demo为“真不错，住在山里真不错啊”
 
-### hengyoujingshen.py
+### henyoujingshen.py
 
 这个主程序通过readlines进行逐行传参，demo为《啊，海军》名场面
+
+如果需要查看demo效果，请一同下载henyoujingshen.py
 
 ## 数据库
 
 使用MySQL5.7.11，数据库为xinhua，表为main
 
+数据库文件为main.csv
+
 注意！表使用utf8mb4编码，而非utf8，使用其它编码方式可能会造成在导入生僻字时编码异常
 
 main表结构如下：
 
-  • no
+  • no： 序号，类型为int，长度7，非NULL，主键
 
-    序号，类型为int，长度7，非NULL，主键
+  • word： 汉字，类型为char，长度2，非NULL
 
-  • no
+  • strokes： 笔画，类型为int，长度3，非NULL
 
-    序号，类型为int，长度7，非NULL，主键
+  • pinyin： 带注音的拼音，类型为text，非NULL
+
+  • notone： 不带注音的拼音，类型为text，非NULL
+
+  • from_xinhua： 标识符，类型为int，长度为1，非NULL，默认为0，目前0表示来自Unihan，1表示来自新华字典
 
 
 ## 开发
+
+import_unihan.py通过简单读取文本向数据库写入数据
+
+import_xinhua.py通过解析JSON向数据库写入数据
+
+Unihan相关文件来自互联网，新华字典文件(word,json)来自[pwxcoo/chinese-xinhua](https://github.com/pwxcoo/chinese-xinhua)
