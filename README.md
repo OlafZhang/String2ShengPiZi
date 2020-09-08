@@ -54,3 +54,11 @@ import_unihan.py通过简单读取文本向数据库写入数据
 import_xinhua.py通过解析JSON向数据库写入数据
 
 Unihan相关文件来自互联网，新华字典文件(word,json)来自[pwxcoo/chinese-xinhua](https://github.com/pwxcoo/chinese-xinhua)
+
+## 存在的问题
+
+首先，汉字存在多音字，出现多音字情况只会取第一种情况
+
+另外，数据库存在一点问题，尤其是Unihan的，会出现个别字异常或对不上读音/笔画的情况
+
+总之存在一些bug就对了:)
