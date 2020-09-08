@@ -22,7 +22,7 @@
 
 这个主程序通过readlines进行逐行传参，demo为《啊，海军》名场面
 
-如果需要查看demo效果，请一同下载henyoujingshen.py
+如果需要查看demo效果，请顺便下载henyoujingshen.txt
 
 ## 数据库
 
