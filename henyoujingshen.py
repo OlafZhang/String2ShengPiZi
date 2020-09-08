@@ -33,7 +33,7 @@ db = pymysql.connect("localhost","root","114514","xinhua" )
 
 #请在这里导入UTF-8编码的台词文件
 #最好去掉回车符等干扰项
-file = open("hengyoujingshen.txt","r",encoding='utf-8')
+file = open("henyoujingshen.txt","r",encoding='utf-8')
 
 #主程序
 for count in range(0,user_want):
