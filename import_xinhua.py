@@ -3,7 +3,7 @@ file = open("word.json","r",encoding='utf-8')
 content = file.read()
 a = json.loads(content)
 file.close()
-db = pymysql.connect("localhost","root","123456","xinhua" )
+db = pymysql.connect("localhost","root","114514","xinhua" )
 
 for i in range(0,len(a)):
     try:
@@ -24,7 +24,12 @@ for i in range(0,len(a)):
             elif z == '亇':
                 break
             else:
-                tmp += z
+                print(("不能理解%s中'%s'的意义，请手动输入以纠正")%(pinyin,z))
+                z = str(input("它应该是字母或拼音，跳过该词直接回车，抛弃后面的字输入break："))
+                if z == str("break"):
+                    break
+                else:
+                    tmp += z
         pinyin = tmp
 
         notone = ''
@@ -44,9 +49,12 @@ for i in range(0,len(a)):
             elif z in ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']:
                 notone += z
             else:
-                print(pinyin)
-                input_z = input(str("输入一个字母"))
-                notone += input_z
+                print(("不能理解%s中'%s'的意义，请手动输入以纠正") % (pinyin, z))
+                z = str(input("它应该是字母，跳过该词直接回车，抛弃后面的字输入break："))
+                if z == str("break"):
+                    break
+                else:
+                    tmp += z
 
         into_command = str(("insert into main values(%s,'%s',%s,'%s','%s',1)")%(no,word,strokes,pinyin,notone ))
         print(into_command)
