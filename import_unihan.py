@@ -4,7 +4,7 @@ file = open("Unihan_IRGSources.txt","r",encoding='utf-8')
 
 import pypinyin,pymysql
 
-db = pymysql.connect("localhost","root","123456","xinhua" )
+db = pymysql.connect("localhost","root","114514","xinhua" )
 
 global temp
 global output
