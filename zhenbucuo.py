@@ -32,7 +32,7 @@ if str(user_want).isdigit():
 else:
     user_want = 1
 
-db = pymysql.connect("localhost","root","114514","xinhua" )
+db = pymysql.connect("localhost","root","123456","xinhua" )
 
 #主程序
 for count in range(0,user_want):
